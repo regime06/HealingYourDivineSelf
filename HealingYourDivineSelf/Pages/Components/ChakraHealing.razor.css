@@ -1,0 +1,114 @@
+﻿
+
+.container {
+    width: 100% !important;
+   /* border: 1px solid red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+/*    background-color: #f9f4ed;
+    background-image: url('image/backgrounds/backgrounds.jpg');*/
+height:100vh;
+}
+
+.content {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+    .image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+.text-content {
+    flex: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+    .text-content h1 {
+        font-size: 36px;
+        font-weight: 700;
+        font-family: 'Raleway';
+        margin-bottom: 20px;
+        color: #1F4568;
+        font-style: italic;
+    }
+
+    .text-content p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 20px;
+        color: #1F4568;
+        font-family: 'Raleway';
+    }
+
+.button-container {
+    margin-top: 20px;
+}
+
+    .button-container a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        background-color: #a88956;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+        .button-container a:hover {
+            background-color: #8f784c;
+        }
+
+@media (max-width: 400px) {
+    .c1 {
+        height: 100vh;
+        display: block;
+    }
+
+    .content {
+        display: block;
+        position: relative;
+        top: 10%;
+    }
+
+    .image img {
+        border: 1px solid red;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        position: relative;
+        bottom: 75vh;
+    }
+
+    .text-content p {
+        position: relative;
+        top: 13vh;
+        font-size: 14px;
+    }
+
+    .button-container {
+        position: relative;
+        top: 100px;
+    }
+
+    .text-content h1 {
+        top: 14vh;
+        position: relative;
+    }
+}

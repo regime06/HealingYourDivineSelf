@@ -1,0 +1,33 @@
+/* Media Query for 390x840 cellphone */
+/* Media Query for 390x840 cellphone */
+/*@media (max-width: 1600px) {
+    .cw {
+        color: white;*/
+   
+        /*font-size: 11px;*/
+    /*}
+}*/
+.c2 {
+    color:white;
+    background-color:#11403D;
+    font-size:20px;
+}
+@media (max-width: 400px) 
+{
+    .c2 {
+        /*border: 1px solid red;*/
+        font-size: 11px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+     
+     
+        background-color: #11403D;
+        font-size: 9px;
+    }
+        .c2 a {
+            color: white;
+
+        }
+    
+}
