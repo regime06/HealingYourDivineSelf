@@ -1,2 +1,2 @@
-build: dotnet restore && dotnet publish -c Release -o out
+
 start: dotnet out/HealingYourDivineSelf.dll
