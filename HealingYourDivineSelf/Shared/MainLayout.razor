@@ -1,10 +1,11 @@
 ﻿@inherits LayoutComponentBase
-
+@inject NavigationManager NavigationManager
 <PageTitle>Healing Your Divine Self</PageTitle>
 <div class="container-fluid m-0 p-0 bg-light overflow-hidden">
     <div class="row">
         <div class="col">
             <div class="c2 top-row  align-items-center text-center " >
+                @fullImagePath
                 <a class="cw text-decoration-none" href="https://docs.microsoft.com/aspnet/" target="_blank">Awaken Your True Essence: Sign Up for Our FREE 'Healing Your Divine Self' Workshop Today1!</a>
             </div>
 
@@ -12,6 +13,7 @@
     </div>
     
 </div>
+
     <div class="row">
         <div class="col">
             @* <div class="container-fluid m-0 p-0  "> *@
@@ -44,3 +46,11 @@
 @* </div>
  *@
 
+ @code{
+    private string fullImagePath;
+
+    protected override void OnInitialized()
+    {
+        fullImagePath = NavigationManager.BaseUri + "images/11.png";
+    }
+ }
