@@ -1,0 +1,39 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master  # or the branch you want to trigger the build from
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # You can use other runners like windows-latest if needed
+    
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up .NET SDK (Specify the version you need)
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0'  # Replace with the correct version for your project
+
+      # Step 3: Restore dependencies (dotnet restore)
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Step 4: Build the project (dotnet build)
+      - name: Build
+        run: dotnet build --configuration Release
+
+      # Step 5: Publish the application (dotnet publish)
+      - name: Publish
+        run: dotnet publish --configuration Release --output ./out
+
+      # Step 6: Deploy to Railway
+      - name: Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # Ensure you have the RAILWAY_TOKEN secret set in your repository
+        run: railway up --path ./out
